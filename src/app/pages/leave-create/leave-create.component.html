@@ -1,0 +1,44 @@
+<h2 class="content-block">Create Leave</h2>
+<div class="content-block dx-card responsive-paddings">
+ <div class="form-box">
+  <div>
+    <label>Title*</label>
+    <dx-text-box placeholder="Title*" [(ngModel)]="leaveModel.title"></dx-text-box>
+    <span class="error" *ngIf="errors.title">Title is required</span>
+  </div>
+  <div>
+    <label>Code*</label>
+    <dx-text-box placeholder="Code*" [(ngModel)]="leaveModel.code"></dx-text-box>
+    <span class="error" *ngIf="errors.code">Code is required</span>
+    <span class="error" *ngIf="errors.codeMax">Maximum 2 digit code is allowed</span>
+  </div>
+  <div>
+    <label>Priority</label>
+    <dx-select-box placeholder="Priority" [(ngModel)]="leaveModel.priority" [items]="priorities"></dx-select-box>
+  </div>
+  <div>
+    <dx-check-box [(ngModel)]="leaveModel.is_caary_forward"></dx-check-box>
+    <label class="check-label">Carry Forward</label>
+  </div>
+  <div>
+    <dx-check-box [(ngModel)]="leaveModel.is_proof_required"></dx-check-box>
+    <label class="check-label">Proof Required</label>
+  </div>
+  <div>
+    <label style="color: #9c27b0;">PURPOSE</label>
+  </div>
+  <span class="error" *ngIf="errors.purpose">Purpose is required</span>
+  <span class="error" *ngIf="errors.blankPurpose">Fill previous purpose field before adding new</span>
+  <div *ngFor="let item of leaveModel.purpose;let i=index" class="loop-items">
+    <dx-text-box placeholder="Title*" [(ngModel)]="leaveModel.purpose[i]"></dx-text-box>
+    <dx-button icon="trash" color="red" (click)="deletePurpose(i)"></dx-button>
+  </div>
+  <div>
+    <dx-button (click)="addPurpose()">Add Purpose</dx-button>
+  </div>
+  <hr/>
+  <div class="save">
+    <dx-button (click)="save()">Save</dx-button>
+  </div>
+ </div>
+</div>

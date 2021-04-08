@@ -1,0 +1,50 @@
+.form-avatar {
+    float: left;
+    height: 120px;
+    width: 120px;
+    margin-right: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    overflow: hidden; 
+}
+.form-avatar img {
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+}
+/* .form-box {
+    display: flex;
+    justify-content: space-between;
+} */
+.form-box div{
+    margin: 30px 5px;
+}
+.dx-texteditor,label {
+    margin: 5px;
+    padding: 10px 0;
+}
+.check-label {
+    padding: 0 10px;
+}
+.loop-items {
+    display: flex;
+    align-items: flex-end;
+}
+.loop-items .dx-texteditor {width: 100%;}
+::ng-deep .loop-items .dx-icon-trash {color: red !important;}
+.dx-button {width: 15%;background: rgba(228, 225, 225, 0.233);}
+.loop-items .dx-button {width: min-content;}
+.save .dx-button{
+    background: #9c27b0;
+    color: #fff;
+}
+@media screen and (max-width: 480px) {
+    .dx-button {width: 100%;}
+}
+.error {
+    padding: 0 5px;
+    color: red;
+}
